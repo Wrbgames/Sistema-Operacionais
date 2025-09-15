@@ -1,0 +1,53 @@
+# 1 Instalação do Samba
+arthur-ubuntu@arthur-ubuntu-VirtualBox:~$ sudo apt-get update
+[sudo] senha para arthur-ubuntu: 
+Atingido:1 http://br.archive.ubuntu.com/ubuntu noble InRelease
+Atingido:2 http://br.archive.ubuntu.com/ubuntu noble-updates InRelease
+Atingido:3 http://br.archive.ubuntu.com/ubuntu noble-backports InRelease
+Obter:4 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+Obter:5 http://security.ubuntu.com/ubuntu noble-security/main amd64 Packages [1.119 kB]
+Obter:6 http://security.ubuntu.com/ubuntu noble-security/main i386 Packages [324 kB]
+Obter:7 http://security.ubuntu.com/ubuntu noble-security/main Translation-en [192 kB]
+Obter:8 http://security.ubuntu.com/ubuntu noble-security/main amd64 Components [21,6 kB]
+Obter:9 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Components [212 B]
+Obter:10 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Packages [879 kB]
+Obter:11 http://security.ubuntu.com/ubuntu noble-security/universe i386 Packages [544 kB]
+Obter:12 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Components [52,3 kB]
+Obter:13 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 Components [212 B]
+Baixados 3.258 kB em 2s (1.367 kB/s)          
+Lendo listas de pacotes... Pronto
+arthur-ubuntu@arthur-ubuntu-VirtualBox:~$ sudo apt-get install samba
+Lendo listas de pacotes... Pronto
+
+# 2Adicionar Usuarios Samba
+Construindo árvore de dependências... Pronto
+Lendo informação de estado... Pronto        
+samba já é a versão mais nova (2:4.19.5+dfsg-4ubuntu9.3).
+O seguinte pacote foi instalado automaticamente e já não é necessário:
+  libllvm19
+Utilize 'sudo apt autoremove' para o remover.
+0 pacotes atualizados, 0 pacotes novos instalados, 0 a serem removidos e 45 não atualizados.
+arthur-ubuntu@arthur-ubuntu-VirtualBox:~$ sudo smbpasswd -a dev_senior
+New SMB password:
+Retype new SMB password:
+Added user dev_senior.
+arthur-ubuntu@arthur-ubuntu-VirtualBox:~$ sudo smbpasswd -a dev_junior
+New SMB password:
+Retype new SMB password:
+Added user dev_junior.
+
+# 3 Criar DIretorios para Compartilhamento
+arthur-ubuntu@arthur-ubuntu-VirtualBox:~$ sudo mkdir -p /srv/samba/publico
+arthur-ubuntu@arthur-ubuntu-VirtualBox:~$ sudo chown nobody:nogroup /srv/samba/publico
+arthur-ubuntu@arthur-ubuntu-VirtualBox:~$ sudo chmod 777 /srv/samba/publico
+
+# 4 Configurar os COmpartilhamento
+arthur-ubuntu@arthur-ubuntu-VirtualBox:~$ sudo cp /etc/samba/smb.conf /etc/samba/smb.conf.bkp
+arthur-ubuntu@arthur-ubuntu-VirtualBox:~$ sudo nano /etc/samba/smb.conf
+
+# 5 Reiniciar e Testar
+arthur-ubuntu@arthur-ubuntu-VirtualBox:~$ sudo  systemctl restart smbd 
+[sudo] senha para arthur-ubuntu: 
+arthur-ubuntu@arthur-ubuntu-VirtualBox:~$ sudo  systemctl restart nmbd
+
+
