@@ -1,0 +1,360 @@
+1 Instalar e COnfiguar o Servidor do WEB
+
+arthur-ubuntu@arthur-ubuntu-VirtualBox:~$ sudo apt-get update sudo
+[sudo] senha para arthur-ubuntu: 
+E: O comando update não leva argumentos
+arthur-ubuntu@arthur-ubuntu-VirtualBox:~$ sudo apt-get update
+[sudo] senha para arthur-ubuntu: 
+Atingido:1 http://br.archive.ubuntu.com/ubuntu noble InRelease
+Obter:2 http://br.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+Obter:3 http://br.archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]          
+Obter:4 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+Obter:5 http://br.archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1.415 kB]
+Obter:6 http://br.archive.ubuntu.com/ubuntu noble-updates/main i386 Packages [526 kB]  
+Obter:7 http://br.archive.ubuntu.com/ubuntu noble-updates/main Translation-en [278 kB]   
+Obter:8 http://br.archive.ubuntu.com/ubuntu noble-updates/main amd64 Components [175 kB]
+Obter:9 http://br.archive.ubuntu.com/ubuntu noble-updates/main amd64 c-n-f Metadata [15,2 kB]       
+Obter:10 http://br.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [1.893 kB]     
+Obter:11 http://security.ubuntu.com/ubuntu noble-security/main amd64 Packages [1.124 kB]         
+Obter:12 http://br.archive.ubuntu.com/ubuntu noble-updates/restricted Translation-en [425 kB]
+Obter:13 http://br.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Components [212 B]      
+Obter:14 http://br.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1.484 kB]
+Obter:15 http://br.archive.ubuntu.com/ubuntu noble-updates/universe i386 Packages [980 kB]             
+Obter:16 http://security.ubuntu.com/ubuntu noble-security/main i386 Packages [324 kB]           
+Obter:17 http://br.archive.ubuntu.com/ubuntu noble-updates/universe Translation-en [299 kB]
+Obter:18 http://security.ubuntu.com/ubuntu noble-security/main Translation-en [192 kB]       
+Obter:19 http://security.ubuntu.com/ubuntu noble-security/main amd64 Components [21,5 kB]            
+Obter:20 http://security.ubuntu.com/ubuntu noble-security/main amd64 c-n-f Metadata [8.748 B]               
+Obter:21 http://security.ubuntu.com/ubuntu noble-security/restricted i386 Packages [19,3 kB]               
+Obter:22 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [1.770 kB]             
+Obter:23 http://br.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Components [377 kB]       
+Obter:24 http://br.archive.ubuntu.com/ubuntu noble-updates/universe Icons (48x48) [232 kB]           
+Obter:25 http://br.archive.ubuntu.com/ubuntu noble-updates/universe Icons (64x64) [363 kB]           
+Obter:26 http://security.ubuntu.com/ubuntu noble-security/restricted Translation-en [396 kB]      
+Obter:27 http://br.archive.ubuntu.com/ubuntu noble-updates/universe amd64 c-n-f Metadata [31,1 kB]
+Obter:28 http://br.archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Components [940 B]          
+Obter:29 http://br.archive.ubuntu.com/ubuntu noble-backports/main amd64 Components [7.060 B]            
+Obter:30 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Components [212 B]                
+Obter:31 http://br.archive.ubuntu.com/ubuntu noble-backports/restricted amd64 Components [216 B]             
+Obter:32 http://br.archive.ubuntu.com/ubuntu noble-backports/universe amd64 Components [19,2 kB]             
+Obter:33 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 c-n-f Metadata [468 B]            
+Obter:34 http://security.ubuntu.com/ubuntu noble-security/universe i386 Packages [544 kB]                   
+Obter:35 http://br.archive.ubuntu.com/ubuntu noble-backports/multiverse amd64 Components [212 B]            
+Obter:36 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Packages [880 kB]
+Obter:37 http://security.ubuntu.com/ubuntu noble-security/universe Translation-en [195 kB]
+Obter:38 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Components [52,2 kB]
+Obter:39 http://security.ubuntu.com/ubuntu noble-security/universe amd64 c-n-f Metadata [18,0 kB]
+Obter:40 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 Packages [33,1 kB]
+Obter:41 http://security.ubuntu.com/ubuntu noble-security/multiverse i386 Packages [7.504 B]
+Obter:42 http://security.ubuntu.com/ubuntu noble-security/multiverse Translation-en [5.768 B]
+Obter:43 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 Components [212 B]
+Obter:44 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 c-n-f Metadata [476 B]
+Baixados 14,5 MB em 4s (3.324 kB/s)                               
+Lendo listas de pacotes... Pronto
+arthur-ubuntu@arthur-ubuntu-VirtualBox:~$ sudo apt-get install apache2
+Lendo listas de pacotes... Pronto
+Construindo árvore de dependências... Pronto
+Lendo informação de estado... Pronto        
+O seguinte pacote foi instalado automaticamente e já não é necessário:
+  libllvm19
+Utilize 'sudo apt autoremove' para o remover.
+Os pacotes adicionais a seguir serão instalados:
+  apache2-bin apache2-data apache2-utils libapr1t64 libaprutil1-dbd-sqlite3 libaprutil1-ldap libaprutil1t64
+Pacotes sugeridos:
+  apache2-doc apache2-suexec-pristine | apache2-suexec-custom
+Os NOVOS pacotes a seguir serão instalados:
+  apache2 apache2-bin apache2-data apache2-utils libapr1t64 libaprutil1-dbd-sqlite3 libaprutil1-ldap libaprutil1t64
+0 pacotes atualizados, 8 pacotes novos instalados, 0 a serem removidos e 52 não atualizados.
+É preciso baixar 1.902 kB de arquivos.
+Depois desta operação, 7.451 kB adicionais de espaço em disco serão usados.
+Você quer continuar? [S/n] s
+Obter:1 http://br.archive.ubuntu.com/ubuntu noble-updates/main amd64 libapr1t64 amd64 1.7.2-3.1ubuntu0.1 [108 kB]
+Obter:2 http://br.archive.ubuntu.com/ubuntu noble/main amd64 libaprutil1t64 amd64 1.6.3-1.1ubuntu7 [91,9 kB]
+Obter:3 http://br.archive.ubuntu.com/ubuntu noble/main amd64 libaprutil1-dbd-sqlite3 amd64 1.6.3-1.1ubuntu7 [11,2 kB]
+Obter:4 http://br.archive.ubuntu.com/ubuntu noble/main amd64 libaprutil1-ldap amd64 1.6.3-1.1ubuntu7 [9.116 B]
+Obter:5 http://br.archive.ubuntu.com/ubuntu noble-updates/main amd64 apache2-bin amd64 2.4.58-1ubuntu8.8 [1.331 kB]
+Obter:6 http://br.archive.ubuntu.com/ubuntu noble-updates/main amd64 apache2-data all 2.4.58-1ubuntu8.8 [163 kB]
+Obter:7 http://br.archive.ubuntu.com/ubuntu noble-updates/main amd64 apache2-utils amd64 2.4.58-1ubuntu8.8 [97,7 kB]
+Obter:8 http://br.archive.ubuntu.com/ubuntu noble-updates/main amd64 apache2 amd64 2.4.58-1ubuntu8.8 [90,2 kB]
+Baixados 1.902 kB em 1s (1.338 kB/s)
+A seleccionar pacote anteriormente não seleccionado libapr1t64:amd64.
+(Lendo banco de dados ... 177333 ficheiros e diretórios atualmente instalados.)
+A preparar para desempacotar .../0-libapr1t64_1.7.2-3.1ubuntu0.1_amd64.deb ...
+A descompactar libapr1t64:amd64 (1.7.2-3.1ubuntu0.1) ...
+A seleccionar pacote anteriormente não seleccionado libaprutil1t64:amd64.
+A preparar para desempacotar .../1-libaprutil1t64_1.6.3-1.1ubuntu7_amd64.deb ...
+A descompactar libaprutil1t64:amd64 (1.6.3-1.1ubuntu7) ...
+A seleccionar pacote anteriormente não seleccionado libaprutil1-dbd-sqlite3:amd64.
+A preparar para desempacotar .../2-libaprutil1-dbd-sqlite3_1.6.3-1.1ubuntu7_amd64.deb ...
+A descompactar libaprutil1-dbd-sqlite3:amd64 (1.6.3-1.1ubuntu7) ...
+A seleccionar pacote anteriormente não seleccionado libaprutil1-ldap:amd64.
+A preparar para desempacotar .../3-libaprutil1-ldap_1.6.3-1.1ubuntu7_amd64.deb ...
+A descompactar libaprutil1-ldap:amd64 (1.6.3-1.1ubuntu7) ...
+A seleccionar pacote anteriormente não seleccionado apache2-bin.
+A preparar para desempacotar .../4-apache2-bin_2.4.58-1ubuntu8.8_amd64.deb ...
+A descompactar apache2-bin (2.4.58-1ubuntu8.8) ...
+A seleccionar pacote anteriormente não seleccionado apache2-data.
+A preparar para desempacotar .../5-apache2-data_2.4.58-1ubuntu8.8_all.deb ...
+A descompactar apache2-data (2.4.58-1ubuntu8.8) ...
+A seleccionar pacote anteriormente não seleccionado apache2-utils.
+A preparar para desempacotar .../6-apache2-utils_2.4.58-1ubuntu8.8_amd64.deb ...
+A descompactar apache2-utils (2.4.58-1ubuntu8.8) ...
+A seleccionar pacote anteriormente não seleccionado apache2.
+A preparar para desempacotar .../7-apache2_2.4.58-1ubuntu8.8_amd64.deb ...
+A descompactar apache2 (2.4.58-1ubuntu8.8) ...
+Configurando libapr1t64:amd64 (1.7.2-3.1ubuntu0.1) ...
+Configurando apache2-data (2.4.58-1ubuntu8.8) ...
+Configurando libaprutil1t64:amd64 (1.6.3-1.1ubuntu7) ...
+Configurando libaprutil1-ldap:amd64 (1.6.3-1.1ubuntu7) ...
+Configurando libaprutil1-dbd-sqlite3:amd64 (1.6.3-1.1ubuntu7) ...
+Configurando apache2-utils (2.4.58-1ubuntu8.8) ...
+Configurando apache2-bin (2.4.58-1ubuntu8.8) ...
+Configurando apache2 (2.4.58-1ubuntu8.8) ...
+Enabling module mpm_event.
+Enabling module authz_core.
+Enabling module authz_host.
+Enabling module authn_core.
+Enabling module auth_basic.
+Enabling module access_compat.
+Enabling module authn_file.
+Enabling module authz_user.
+Enabling module alias.
+Enabling module dir.
+Enabling module autoindex.
+Enabling module env.
+Enabling module mime.
+Enabling module negotiation.
+Enabling module setenvif.
+Enabling module filter.
+Enabling module deflate.
+Enabling module status.
+Enabling module reqtimeout.
+Enabling conf charset.
+Enabling conf localized-error-pages.
+Enabling conf other-vhosts-access-log.
+Enabling conf security.
+Enabling conf serve-cgi-bin.
+Enabling site 000-default.
+Created symlink /etc/systemd/system/multi-user.target.wants/apache2.service → /usr/lib/systemd/system/apache2.service.
+Created symlink /etc/systemd/system/multi-user.target.wants/apache-htcacheclean.service → /usr/lib/systemd/system/apache-htcacheclean.service.
+A processar 'triggers' para ufw (0.36.2-6) ...
+A processar 'triggers' para man-db (2.12.0-4build2) ...
+A processar 'triggers' para libc-bin (2.39-0ubuntu8.5) ...
+
+2 Criar uma Pagina de Teste
+arthur-ubuntu@arthur-ubuntu-VirtualBox:~$ echo '<h1>Bem-vindo ao Servidor Web da Empresa!</h1>' | sudo tee /var/www/html/index.html
+<h1>Bem-vindo ao Servidor Web da Empresa!</h1>
+arthur-ubuntu@arthur-ubuntu-VirtualBox:~$ ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host noprefixroute 
+       valid_lft forever preferred_lft forever
+2: enp0s3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 08:00:27:0f:4e:02 brd ff:ff:ff:ff:ff:ff
+    inet 10.0.2.15/24 brd 10.0.2.255 scope global dynamic noprefixroute enp0s3
+       valid_lft 84242sec preferred_lft 84242sec
+    inet6 fd17:625c:f037:2:4284:6b94:2720:33b0/64 scope global temporary dynamic 
+       valid_lft 86374sec preferred_lft 14374sec
+    inet6 fd17:625c:f037:2:a00:27ff:fe0f:4e02/64 scope global dynamic mngtmpaddr 
+       valid_lft 86374sec preferred_lft 14374sec
+    inet6 fe80::a00:27ff:fe0f:4e02/64 scope link 
+       valid_lft forever preferred_lft forever
+
+3 Instalar e Configurar O Servidor DNS
+arthur-ubuntu@arthur-ubuntu-VirtualBox:~$ sudo apt-get install bind9
+Lendo listas de pacotes... Pronto
+Construindo árvore de dependências... Pronto
+Lendo informação de estado... Pronto        
+O seguinte pacote foi instalado automaticamente e já não é necessário:
+  libllvm19
+Utilize 'sudo apt autoremove' para o remover.
+Os pacotes adicionais a seguir serão instalados:
+  bind9-dnsutils bind9-host bind9-libs bind9-utils
+Pacotes sugeridos:
+  bind-doc
+Os NOVOS pacotes a seguir serão instalados:
+  bind9 bind9-utils
+Os pacotes a seguir serão atualizados:
+  bind9-dnsutils bind9-host bind9-libs
+3 pacotes atualizados, 2 pacotes novos instalados, 0 a serem removidos e 49 não atualizados.
+É preciso baixar 1.880 kB de arquivos.
+Depois desta operação, 1.624 kB adicionais de espaço em disco serão usados.
+Você quer continuar? [S/n] s
+Obter:1 http://br.archive.ubuntu.com/ubuntu noble-updates/main amd64 bind9-host amd64 1:9.18.39-0ubuntu0.24.04.1 [50,5 kB]
+Obter:2 http://br.archive.ubuntu.com/ubuntu noble-updates/main amd64 bind9-dnsutils amd64 1:9.18.39-0ubuntu0.24.04.1 [156 kB]
+Obter:3 http://br.archive.ubuntu.com/ubuntu noble-updates/main amd64 bind9-libs amd64 1:9.18.39-0ubuntu0.24.04.1 [1.257 kB]
+Obter:4 http://br.archive.ubuntu.com/ubuntu noble-updates/main amd64 bind9-utils amd64 1:9.18.39-0ubuntu0.24.04.1 [159 kB]
+Obter:5 http://br.archive.ubuntu.com/ubuntu noble-updates/main amd64 bind9 amd64 1:9.18.39-0ubuntu0.24.04.1 [258 kB]
+Baixados 1.880 kB em 1s (1.574 kB/s)  
+(Lendo banco de dados ... 178039 ficheiros e diretórios atualmente instalados.)
+A preparar para desempacotar .../bind9-host_1%3a9.18.39-0ubuntu0.24.04.1_amd64.deb ...
+A descompactar bind9-host (1:9.18.39-0ubuntu0.24.04.1) sobre (1:9.18.30-0ubuntu0.24.04.2) ...
+A preparar para desempacotar .../bind9-dnsutils_1%3a9.18.39-0ubuntu0.24.04.1_amd64.deb ...
+A descompactar bind9-dnsutils (1:9.18.39-0ubuntu0.24.04.1) sobre (1:9.18.30-0ubuntu0.24.04.2) ...
+A preparar para desempacotar .../bind9-libs_1%3a9.18.39-0ubuntu0.24.04.1_amd64.deb ...
+A descompactar bind9-libs:amd64 (1:9.18.39-0ubuntu0.24.04.1) sobre (1:9.18.30-0ubuntu0.24.04.2) ...
+A seleccionar pacote anteriormente não seleccionado bind9-utils.
+A preparar para desempacotar .../bind9-utils_1%3a9.18.39-0ubuntu0.24.04.1_amd64.deb ...
+A descompactar bind9-utils (1:9.18.39-0ubuntu0.24.04.1) ...
+A seleccionar pacote anteriormente não seleccionado bind9.
+A preparar para desempacotar .../bind9_1%3a9.18.39-0ubuntu0.24.04.1_amd64.deb ...
+A descompactar bind9 (1:9.18.39-0ubuntu0.24.04.1) ...
+Configurando bind9-libs:amd64 (1:9.18.39-0ubuntu0.24.04.1) ...
+Configurando bind9-utils (1:9.18.39-0ubuntu0.24.04.1) ...
+Configurando bind9 (1:9.18.39-0ubuntu0.24.04.1) ...
+info: Selecionando GID da faixa 100 a 999 ...
+info: Adicionando grupo 'bind' (GID 124) ...
+info: Selecionando UID da faixa 100 a 999 ...
+
+info: Adicionando usuário de sistema 'bind' (UID 123) ...
+info: Adicionando novo usuário 'bind' (UID 123) com grupo 'bind' ...
+info: Não criando diretório pessoal '/var/cache/bind'.
+wrote key file "/etc/bind/rndc.key"
+named-resolvconf.service is a disabled or a static unit, not starting it.
+Created symlink /etc/systemd/system/bind9.service → /usr/lib/systemd/system/named.service.
+Created symlink /etc/systemd/system/multi-user.target.wants/named.service → /usr/lib/systemd/system/named.service.
+Configurando bind9-host (1:9.18.39-0ubuntu0.24.04.1) ...
+Configurando bind9-dnsutils (1:9.18.39-0ubuntu0.24.04.1) ...
+A processar 'triggers' para ufw (0.36.2-6) ...
+A processar 'triggers' para man-db (2.12.0-4build2) ...
+A processar 'triggers' para libc-bin (2.39-0ubuntu8.5) ...
+arthur-ubuntu@arthur-ubuntu-VirtualBox:~$ sudo nano /etc/bind/named.conf.local
+arthur-ubuntu@arthur-ubuntu-VirtualBox:~$ sudo nano /etc/bind/db.empresa.local
+[sudo] senha para arthur-ubuntu: 
+
+4 Reiniciar e COnfigurar CLientes e Testar
+arthur-ubuntu@arthur-ubuntu-VirtualBox:~$ sudo systemctl restart bind9
+[sudo] senha para arthur-ubuntu: 
+arthur-ubuntu@arthur-ubuntu-VirtualBox:~$ sudo nano /etc/resolv.conf:
+arthur-ubuntu@arthur-ubuntu-VirtualBox:~$ dig www.empresa.local
+
+; <<>> DiG 9.18.39-0ubuntu0.24.04.1-Ubuntu <<>> www.empresa.local
+;; global options: +cmd
+;; Got answer:
+;; WARNING: .local is reserved for Multicast DNS
+;; You are currently testing what happens when an mDNS query is leaked to DNS
+;; ->>HEADER<<- opcode: QUERY, status: SERVFAIL, id: 32932
+;; flags: qr aa rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 65494
+;; QUESTION SECTION:
+;www.empresa.local.		IN	A
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.53#53(127.0.0.53) (UDP)
+;; WHEN: Wed Sep 17 15:37:44 -03 2025
+;; MSG SIZE  rcvd: 46
+
+arthur-ubuntu@arthur-ubuntu-VirtualBox:~$ curl http:www.empresa.local
+Comando 'curl' não encontrado, mas poder ser instalado com:
+sudo snap install curl  # version 8.16.0, or
+sudo apt  install curl  # version 8.5.0-2ubuntu10.6
+Veja 'snap info curl' para versões adicionais.
+arthur-ubuntu@arthur-ubuntu-VirtualBox:~$ sudo apt-get install curl
+Lendo listas de pacotes... Pronto
+Construindo árvore de dependências... Pronto
+Lendo informação de estado... Pronto        
+O seguinte pacote foi instalado automaticamente e já não é necessário:
+  libllvm19
+Utilize 'sudo apt autoremove' para o remover.
+Os NOVOS pacotes a seguir serão instalados:
+  curl
+0 pacotes atualizados, 1 pacotes novos instalados, 0 a serem removidos e 49 não atualizados.
+É preciso baixar 226 kB de arquivos.
+Depois desta operação, 534 kB adicionais de espaço em disco serão usados.
+Obter:1 http://br.archive.ubuntu.com/ubuntu noble-updates/main amd64 curl amd64 8.5.0-2ubuntu10.6 [226 kB]
+Baixados 226 kB em 1s (314 kB/s)
+A seleccionar pacote anteriormente não seleccionado curl.
+(Lendo banco de dados ... 178127 ficheiros e diretórios atualmente instalados.)
+A preparar para desempacotar .../curl_8.5.0-2ubuntu10.6_amd64.deb ...
+A descompactar curl (8.5.0-2ubuntu10.6) ...
+Configurando curl (8.5.0-2ubuntu10.6) ...
+A processar 'triggers' para man-db (2.12.0-4build2) ...
+arthur-ubuntu@arthur-ubuntu-VirtualBox:~$ curl http:www.empresa.local
+curl: (3) URL rejected: Port number was not a decimal number between 0 and 65535
+arthur-ubuntu@arthur-ubuntu-VirtualBox:~$ curl http://www.empresa.local
+curl: (6) Could not resolve host: www.empresa.local
+arthur-ubuntu@arthur-ubuntu-VirtualBox:~$ sudo apt-get update
+Atingido:1 http://br.archive.ubuntu.com/ubuntu noble InRelease
+Atingido:2 http://br.archive.ubuntu.com/ubuntu noble-updates InRelease
+Atingido:3 http://br.archive.ubuntu.com/ubuntu noble-backports InRelease            
+Atingido:4 http://security.ubuntu.com/ubuntu noble-security InRelease               
+Lendo listas de pacotes... Pronto
+arthur-ubuntu@arthur-ubuntu-VirtualBox:~$ curl http:www.empresa.local
+curl: (3) URL rejected: Port number was not a decimal number between 0 and 65535
+arthur-ubuntu@arthur-ubuntu-VirtualBox:~$ curl http://www.empresa.local
+curl: (6) Could not resolve host: www.empresa.local
+arthur-ubuntu@arthur-ubuntu-VirtualBox:~$ sudo apt-get update
+Atingido:1 http://br.archive.ubuntu.com/ubuntu noble InRelease
+Atingido:2 http://br.archive.ubuntu.com/ubuntu noble-updates InRelease              
+Atingido:3 http://br.archive.ubuntu.com/ubuntu noble-backports InRelease            
+Atingido:4 http://security.ubuntu.com/ubuntu noble-security InRelease               
+Lendo listas de pacotes... Pronto
+arthur-ubuntu@arthur-ubuntu-VirtualBox:~$ sudo apt-get install curl
+Lendo listas de pacotes... Pronto
+Construindo árvore de dependências... Pronto
+Lendo informação de estado... Pronto        
+curl já é a versão mais nova (8.5.0-2ubuntu10.6).
+O seguinte pacote foi instalado automaticamente e já não é necessário:
+  libllvm19
+Utilize 'sudo apt autoremove' para o remover.
+0 pacotes atualizados, 0 pacotes novos instalados, 0 a serem removidos e 49 não atualizados.
+arthur-ubuntu@arthur-ubuntu-VirtualBox:~$ curl http://www.empresa.local
+curl: (6) Could not resolve host: www.empresa.local
+arthur-ubuntu@arthur-ubuntu-VirtualBox:~$ sudo nano /etc/resolv.conf
+arthur-ubuntu@arthur-ubuntu-VirtualBox:~$ sudo nano /etc/resolv.conf:
+arthur-ubuntu@arthur-ubuntu-VirtualBox:~$ cat /etc/resolv.conf
+# This is /run/systemd/resolve/stub-resolv.conf managed by man:systemd-resolved(8).
+# Do not edit.
+#
+# This file might be symlinked as /etc/resolv.conf. If you're looking at
+# /etc/resolv.conf and seeing this text, you have followed the symlink.
+#
+# This is a dynamic resolv.conf file for connecting local clients to the
+# internal DNS stub resolver of systemd-resolved. This file lists all
+# configured search domains.
+#
+# Run "resolvectl status" to see details about the uplink DNS servers
+# currently in use.
+#
+# Third party programs should typically not access this file directly, but only
+# through the symlink at /etc/resolv.conf. To manage man:resolv.conf(5) in a
+# different way, replace this symlink by a static file or a different symlink.
+#
+# See man:systemd-resolved.service(8) for details about the supported modes of
+# operation for /etc/resolv.conf.
+
+nameserver 127.0.0.53
+options edns0 trust-ad
+search GRAU TECNICO
+arthur-ubuntu@arthur-ubuntu-VirtualBox:~$ cat /etc/resolv.conf:
+nameserver 127.0.0.1
+
+
+arthur-ubuntu@arthur-ubuntu-VirtualBox:~$ sudo nano /etc/resolv.conf
+arthur-ubuntu@arthur-ubuntu-VirtualBox:~$ sudo nano /etc/resolv.conf:
+arthur-ubuntu@arthur-ubuntu-VirtualBox:~$ dig www.empresa.local
+
+; <<>> DiG 9.18.39-0ubuntu0.24.04.1-Ubuntu <<>> www.empresa.local
+;; global options: +cmd
+;; Got answer:
+;; WARNING: .local is reserved for Multicast DNS
+;; You are currently testing what happens when an mDNS query is leaked to DNS
+;; ->>HEADER<<- opcode: QUERY, status: SERVFAIL, id: 7476
+;; flags: qr aa rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 65494
+;; QUESTION SECTION:
+;www.empresa.local.		IN	A
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.53#53(127.0.0.53) (UDP)
+;; WHEN: Wed Sep 17 15:46:51 -03 2025
+;; MSG SIZE  rcvd: 46
+
+arthur-ubuntu@arthur-ubuntu-VirtualBox:~$ 
+
