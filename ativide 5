@@ -1,0 +1,86 @@
+# 1 Configurar o firewall com IPTABLES
+arthur-ubuntu@arthur-ubuntu-VirtualBox:~$ nano firewall.ssh
+arthur-ubuntu@arthur-ubuntu-VirtualBox:~$ nano firewall.ssh
+arthur-ubuntu@arthur-ubuntu-VirtualBox:~$ chmod +x firewall.ssh
+arthur-ubuntu@arthur-ubuntu-VirtualBox:~$ sudo ./firewall.sh
+[sudo] senha para arthur-ubuntu: 
+Sinto muito, tente novamente.
+[sudo] senha para arthur-ubuntu: 
+sudo: ./firewall.sh: comando não encontrado
+arthur-ubuntu@arthur-ubuntu-VirtualBox:~$ sudo ./firewall.ssh
+./firewall.ssh: 2: echoAplicando Regras de Firewall....: not found
+./firewall.ssh: 5: Iptables-F: not found
+Firewal configurado!
+Chain INPUT (policy DROP 0 packets, 0 bytes)
+ pkts bytes target     prot opt in     out     source               destination         
+    0     0 ACCEPT     0    --  *      *       0.0.0.0/0            0.0.0.0/0            ctstate RELATED,ESTABLISHED
+    0     0 ACCEPT     0    --  lo     *       0.0.0.0/0            0.0.0.0/0           
+    0     0 ACCEPT     6    --  *      *       0.0.0.0/0            0.0.0.0/0            tcp dpt:2244
+    0     0 ACCEPT     6    --  *      *       0.0.0.0/0            0.0.0.0/0            tcp dpt:80
+    0     0 ACCEPT     17   --  *      *       0.0.0.0/0            0.0.0.0/0            udp dpt:53
+    0     0 ACCEPT     6    --  *      *       0.0.0.0/0            0.0.0.0/0            tcp dpt:53
+
+Chain FORWARD (policy DROP 0 packets, 0 bytes)
+ pkts bytes target     prot opt in     out     source               destination         
+
+Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+ pkts bytes target     prot opt in     out     source               destination         
+ 
+# 2 Instalar e Configurar o Proxy
+arthur-ubuntu@arthur-ubuntu-VirtualBox:~$ sudo apt-get install squid
+Lendo listas de pacotes... Pronto
+Construindo árvore de dependências... Pronto
+Lendo informação de estado... Pronto        
+O seguinte pacote foi instalado automaticamente e já não é necessário:
+  libllvm19
+Utilize 'sudo apt autoremove' para o remover.
+Os pacotes adicionais a seguir serão instalados:
+  libdbi-perl libecap3 squid-common squid-langpack
+Pacotes sugeridos:
+  libmldbm-perl libnet-daemon-perl libsql-statement-perl squidclient squid-cgi squid-purge resolvconf smbclient
+  winbind
+Os NOVOS pacotes a seguir serão instalados:
+  libdbi-perl libecap3 squid squid-common squid-langpack
+0 pacotes atualizados, 5 pacotes novos instalados, 0 a serem removidos e 45 não atualizados.
+É preciso baixar 3.867 kB de arquivos.
+Depois desta operação, 15,4 MB adicionais de espaço em disco serão usados.
+Você quer continuar? [S/n] s
+Obter:1 http://br.archive.ubuntu.com/ubuntu noble/main amd64 libecap3 amd64 1.0.1-3.4ubuntu2 [17,0 kB]
+Obter:2 http://br.archive.ubuntu.com/ubuntu noble/main amd64 squid-langpack all 20220130-1 [175 kB]
+Obter:3 http://br.archive.ubuntu.com/ubuntu noble-updates/main amd64 squid-common all 6.13-0ubuntu0.24.04.1 [213 kB]
+Obter:4 http://br.archive.ubuntu.com/ubuntu noble/main amd64 libdbi-perl amd64 1.643-4build3 [721 kB]
+Obter:5 http://br.archive.ubuntu.com/ubuntu noble-updates/main amd64 squid amd64 6.13-0ubuntu0.24.04.1 [2.742 kB]
+Baixados 3.867 kB em 1s (3.018 kB/s)
+A seleccionar pacote anteriormente não seleccionado libecap3:amd64.
+(Lendo banco de dados ... 178134 ficheiros e diretórios atualmente instalados.)
+A preparar para desempacotar .../libecap3_1.0.1-3.4ubuntu2_amd64.deb ...
+A descompactar libecap3:amd64 (1.0.1-3.4ubuntu2) ...
+A seleccionar pacote anteriormente não seleccionado squid-langpack.
+A preparar para desempacotar .../squid-langpack_20220130-1_all.deb ...
+A descompactar squid-langpack (20220130-1) ...
+A seleccionar pacote anteriormente não seleccionado squid-common.
+A preparar para desempacotar .../squid-common_6.13-0ubuntu0.24.04.1_all.deb ...
+A descompactar squid-common (6.13-0ubuntu0.24.04.1) ...
+A seleccionar pacote anteriormente não seleccionado libdbi-perl:amd64.
+A preparar para desempacotar .../libdbi-perl_1.643-4build3_amd64.deb ...
+A descompactar libdbi-perl:amd64 (1.643-4build3) ...
+A seleccionar pacote anteriormente não seleccionado squid.
+A preparar para desempacotar .../squid_6.13-0ubuntu0.24.04.1_amd64.deb ...
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+A descompactar squid (6.13-0ubuntu0.24.04.1) ...
+Configurando squid-langpack (20220130-1) ...
+Configurando libdbi-perl:amd64 (1.643-4build3) ...
+Configurando libecap3:amd64 (1.0.1-3.4ubuntu2) ...
+Configurando squid-common (6.13-0ubuntu0.24.04.1) ...
+Configurando squid (6.13-0ubuntu0.24.04.1) ...
+Setcap worked! /usr/lib/squid/pinger is not suid!
+Skipping profile in /etc/apparmor.d/disable: usr.sbin.squid
+Created symlink /etc/systemd/system/multi-user.target.wants/squid.service → /usr/lib/systemd/system/squid.service.
+A processar 'triggers' para ufw (0.36.2-6) ...
+A processar 'triggers' para man-db (2.12.0-4build2) ...
+A processar 'triggers' para libc-bin (2.39-0ubuntu8.5) ...
+arthur-ubuntu@arthur-ubuntu-VirtualBox:~$ sudo nano /etc/squid/sites_bloqueados.txt
+arthur-ubuntu@arthur-ubuntu-VirtualBox:~$ sudo nano /etc/squid/squid.conf
+
+# 3 Reiniciar e Testar
+arthur-ubuntu@arthur-ubuntu-VirtualBox:~$ sudo systemctl restart squid
